@@ -1,0 +1,16 @@
+body{
+font-family: Times;
+font-size: 10pt;
+background-color:#fefbd8;
+}
+table{
+	font-size: 10pt;
+	margin: 0 auto;
+}
+#border{
+	border: 2px solid #999;
+	background:#ffecb3;
+	padding: 15px;
+	margin: 0 auto;
+	width: 300px;
+}

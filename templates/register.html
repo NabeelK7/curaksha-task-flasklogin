@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" type='text/css' href="{{ url_for('static',filename='style.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body background="{{ url_for('static', filename='images/img.jpg') }}">
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    {% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+<form action="" method="post">
+	<div id="border">
+		<h1 align="center" style="color:#b10a97">Register</h1>
+		<table border="0" cellpadding="2" cellspacing="0">
+			<tr>
+				<td><label for="username">
+					<i class="fas fa-user"></i>
+				</td>
+				<td><input type="text" name="username" placeholder="Name" required></td>
+			</tr>
+			<tr>
+				<td><label for="password">
+					<i class="fas fa-lock"></i>
+				</td>
+				<td><input type="password" name="password" size="15" placeholder="Password" required></td>
+			</tr>
+			<tr>
+				<td><label for="password">
+					<i class="fas fa-lock"></i>
+				</td>
+				<td><input type="password" name="confirm" size="15" placeholder="Confirm Password" required></td>
+			</tr>
+			<tr>
+				<td><label for="email">
+					<i class="fas fa-envelope-square"></i>
+				</td>
+				<td><input type="text" name="email" size="25" placeholder="Email" required></td>
+			</tr>
+			<tr>
+				<td colspan='2' align="center">
+					<input type="submit" name="register" value="Register"></td>
+			</tr>
+			<tr>
+				<td colspan='2' align="center">
+					Already Registered?<a href="/">Login</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</form>
+</body>
+</html>
